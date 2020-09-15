@@ -6,7 +6,7 @@ ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 RUN dnf install -y appstream gcc gettext git glib2-devel gnome-shell \
-                   gnome-desktop-testing meson-0.54.0-1.fc32 npm \
+                   gnome-desktop-testing lcov meson-0.54.0-1.fc32 npm \
                    xorg-x11-server-Xvfb zip && \
     dnf clean all && \
     rm -rf /var/cache/yum
