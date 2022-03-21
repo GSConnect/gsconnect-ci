@@ -17,5 +17,5 @@ RUN dnf -y install \
 
 # Install eslint
 RUN npm install -g eslint && \
-	npm cache rm
+	npm cache clean --force
 
