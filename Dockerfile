@@ -10,7 +10,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN dnf --setopt install_weak_deps=false -y install \
 		appstream desktop-file-utils gcc gettext git glib2-devel \
-		gnome-shell gnome-desktop-testing lcov meson npm \
+		gnome-shell gnome-desktop-testing meson npm \
 		xorg-x11-server-Xvfb zip && \
 	dnf clean all && \
 	rm -rf /var/cache/dnf
