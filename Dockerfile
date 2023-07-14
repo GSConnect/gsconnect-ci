@@ -1,4 +1,4 @@
-FROM fedora:36
+FROM fedora:38
 LABEL org.opencontainers.image.source=https://github.com/GSConnect/gsconnect-ci
 
 RUN dnf --setopt install_weak_deps=false -y install glibc-langpack-en && \
@@ -10,7 +10,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN dnf --setopt install_weak_deps=false -y install \
 		appstream desktop-file-utils gcc gettext git glib2-devel \
-		gnome-shell gnome-desktop-testing meson npm python3 \
+		gnome-shell gnome-desktop-testing meson nodejs-npm python3 \
 		python3-pip xorg-x11-server-Xvfb zip && \
 	dnf clean all && \
 	rm -rf /var/cache/dnf
