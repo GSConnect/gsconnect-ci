@@ -20,6 +20,7 @@ RUN dnf --setopt install_weak_deps=false -y install \
         gnome-desktop-testing \
         meson \
         nodejs-npm \
+        openssl \
         python3 \
         python3-pip \
         xorg-x11-server-Xvfb \
