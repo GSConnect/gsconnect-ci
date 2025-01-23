@@ -29,7 +29,7 @@ RUN dnf --setopt install_weak_deps=false -y install \
     rm -rf /var/cache/dnf
 
 # Install eslint
-RUN npm install -g eslint && \
+RUN npm install -g eslint @eslint/js && \
         npm cache clean --force
 
 # Install Python linting tools
