@@ -1,12 +1,12 @@
 FROM fedora:41
-LABEL org.opencontainers.image.source=https://github.com/GSConnect/gsconnect-ci
+LABEL org.opencontainers.image.source="https://github.com/GSConnect/gsconnect-ci" org.gsconnect.gnome.version="47"
 
 RUN dnf --setopt install_weak_deps=false -y install glibc-langpack-en && \
-	dnf clean all && \
-	rm -rf /var/cache/dnf
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+    dnf clean all && \
+    rm -rf /var/cache/dnf
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 RUN dnf --setopt install_weak_deps=false -y install \
         appstream \
@@ -30,7 +30,7 @@ RUN dnf --setopt install_weak_deps=false -y install \
 
 # Install eslint
 RUN npm install -g eslint globals @eslint/js @eslint/eslintrc && \
-        npm cache clean --force
+    npm cache clean --force
 
 # Install Python linting tools
 RUN python3 -m pip --no-cache-dir --no-input install black flake8
