@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - 'main'
+      - 'gnome/*'
     tags:
       - 'v*'
   pull_request:
     branches:
       - 'main'
+      - 'gnome/*'
 
 env:
   REGISTRY: ghcr.io
@@ -29,6 +31,12 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=edge,branch=main
+            type=ref,event=branch
+            type=sha
+            # set latest tag for default branch
+            type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Log in to the Container registry
         if: github.event_name != 'pull_request'
