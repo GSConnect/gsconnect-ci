@@ -34,8 +34,7 @@ RUN curl -sL https://rpm.nodesource.com/setup_18.x | sudo -E bash -
 
 # Now install node and npm
 RUN dnf --setopt install_weak_deps=false -y install \
-        nodejs \
-        npm && \
+        nodejs && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
