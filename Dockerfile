@@ -19,7 +19,7 @@ RUN dnf --setopt install_weak_deps=false -y install \
         gnome-shell \
         gnome-desktop-testing \
         meson \
-        nodejs-npm \
+        nodejs \
         openssl \
         python3 \
         python3-pip \
