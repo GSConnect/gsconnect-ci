@@ -1,4 +1,4 @@
-FROM fedora:41
+FROM fedora:42
 LABEL org.opencontainers.image.source="https://github.com/GSConnect/gsconnect-ci" org.gsconnect.gnome.version="47"
 
 RUN dnf --setopt install_weak_deps=false -y install glibc-langpack-en && \
