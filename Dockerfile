@@ -11,6 +11,7 @@ ENV LC_ALL=en_US.UTF-8
 RUN dnf --setopt install_weak_deps=false -y install \
         appstream \
         desktop-file-utils \
+        dbus-daemon \
         dbus-devel \
         gcc \
         gettext \
